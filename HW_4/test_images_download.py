@@ -10,6 +10,7 @@ def driver():
     driver = webdriver.Chrome()
     driver.maximize_window()
     driver.get('https://bonigarcia.dev/selenium-webdriver-java/loading-images.html')
+    driver.implicitly_wait(10)
     yield driver
     driver.quit()
 

@@ -3,7 +3,7 @@
 myenv/
 ../../lessons_1/venv/
 env/
-
+venv/
 # Кэш Python
 __pycache__/
 *.pyc
@@ -16,9 +16,12 @@ __pycache__/
 
 # other
 M_QA/
-../../lessons_1/
 lessons/
 interview/
-M_QA/
+Polako/
+
+Exclude everything
+A_QA/Lessons/
+
 
 

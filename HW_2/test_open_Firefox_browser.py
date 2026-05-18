@@ -1,5 +1,4 @@
 import pytest
-from lxml.html.builder import VAR
 from selenium.webdriver.common.by import By
 from time import sleep
 from selenium import webdriver
@@ -21,7 +20,7 @@ def test_payment_section_screenshot(driver):
     driver.save_screenshot("A_QA/HW/HW_2/payment_methods.png")
 
     # Правильный вариант. Делаем скриншот ТОЛЬКО этой секции как по заданию.
-    payment_section = driver.find_element(By.ID, "rec1921734713")
-    payment_section.screenshot("A_QA/HW/HW_2/payment_methods.png")
+    # payment_section = driver.find_element(By.ID, "rec1921734713")
+    # payment_section.screenshot("A_QA/HW/HW_2/payment_methods.png")
     sleep(2)
 

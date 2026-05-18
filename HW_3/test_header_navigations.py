@@ -54,7 +54,6 @@ def test_check_header_elements(driver):
     assert  ru_button.is_displayed()
     print("Кнопка 'ru' отображается")
 
-
     de_button = driver.find_element(By.CSS_SELECTOR, '.tn-elem__19217104631710153064158 a')
     assert  de_button.is_displayed()
     print("Кнопка 'de' отображается")
