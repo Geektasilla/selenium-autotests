@@ -14,14 +14,15 @@ __pycache__/
 # Логи и временные файлы
 *.log
 
-# other
-M_QA/
-lessons/
-interview/
-Polako/
+.venv/
+tools/
+tools/task
+.env
 
-Exclude everything
-A_QA/Lessons/
+Lessons/
+interview/
+
+
 
 
 
