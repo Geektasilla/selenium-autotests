@@ -1,34 +1,34 @@
-# ITCareerHub Selenium Test Suite
+# Selenium Autotests
 
-Автоматизированные UI-тесты для платформы [itcareerhub.de](https://itcareerhub.de/ru) на Python + Selenium + Pytest.
+Automated UI test suite for [itcareerhub.de](https://itcareerhub.de/ru) built with Python, Selenium and Pytest.
 
-## Что покрыто
+## Coverage
 
-- **Навигация в шапке сайта** — логотип, ссылки меню (Программы, О нас, Bildungsgutschein, Отзывы, Блог), кнопки переключения языка отображаются и кликабельны.
-- **Переключение языка (ru ⇄ de)** — проверка смены URL и заголовка страницы при переключении.
-- **Переход О нас → Контакты → Обратный звонок** — сквозной сценарий навигации с проверкой всплывающего текста в форме обратного звонка.
-- **Скриншот секции "Способы оплаты"** — точечный скриншот конкретного блока страницы (не всего окна).
+- **Header navigation** — logo, menu links (Programs, About Us, Bildungsgutschein, Reviews, Blog), and language switch buttons are displayed and clickable.
+- **Language switch (ru ⇄ de)** — verifies the URL and page heading change correctly when switching languages.
+- **About Us → Contacts → Callback flow** — end-to-end navigation scenario that checks the popup text in the callback request form.
+- **Payment section screenshot** — a targeted screenshot of a single page section (not the full window).
 
-## Технологии
+## Tech Stack
 
 - Python 3
 - Selenium WebDriver
 - Pytest
-- Chrome (webdriver управляется через Selenium Manager, отдельная установка драйвера не требуется)
+- Chrome (the driver is managed automatically via Selenium Manager, no separate driver installation needed)
 
-## Структура проекта
+## Project Structure
 
 ```
-├── conftest.py              # общие фикстуры (driver, driver_on_home_page)
+├── conftest.py              # shared fixtures (driver, driver_on_home_page)
 ├── tests/
 │   ├── test_header_navigation.py
 │   ├── test_language_switch.py
 │   ├── test_callback_navigation.py
 │   └── test_payment_section_screenshot.py
-└── screenshots/             # артефакты тестов
+└── screenshots/             # test artifacts
 ```
 
-## Запуск
+## Running the Tests
 
 ```bash
 python -m venv venv
@@ -37,6 +37,6 @@ pip install -r requirements.txt
 pytest
 ```
 
-## Особенности реализации
+## Implementation Notes
 
-Кнопка "Обратный звонок" в хедере иногда перекрывается анимированным блоком, из-за чего обычный Selenium-клик перехватывается посторонним элементом (`ElementClickInterceptedException`). Решение — клик через `execute_script`, который бьёт напрямую по нужному элементу в DOM, в обход перекрывающего слоя.
+The "Callback" button in the header is sometimes overlapped by an animated block, which causes a regular Selenium click to be intercepted by another element (`ElementClickInterceptedException`). The fix is a JS-based click via `execute_script`, which targets the element directly in the DOM and bypasses the overlay.
